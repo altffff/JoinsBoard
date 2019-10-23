@@ -3,6 +3,8 @@ package com.example.service;
 import java.util.List;
 
 import com.example.domain.BoardDomain;
+import org.springframework.stereotype.Service;
+
 
 public interface BoardService {
 
