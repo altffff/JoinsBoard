@@ -1,9 +1,8 @@
-package com.example.service;
+package com.example.services;
 
 import java.util.List;
 
-import com.example.domain.BoardDomain;
-import org.springframework.stereotype.Service;
+import com.example.domains.BoardDomain;
 
 
 public interface BoardService {

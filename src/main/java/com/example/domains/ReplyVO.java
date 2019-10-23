@@ -1,11 +1,11 @@
-package com.example.domain;
+package com.example.domains;
 
 import lombok.Data;
 
 @Data
 public class ReplyVO {
-    private Long rno;
-    private Long bno;
+    private int rno;
+    private int bno;
 
     private String reply;
     private String replyer;

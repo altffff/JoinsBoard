@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mappers.ReplyMapper">
+
+    <select id="getList" parameterType="Integer" resultType="com.example.domains.ReplyVO">
+		SELECT *
+		FROM yjy.tbl_reply
+		where bno=9
+	</select>
+
+    <!--   <insert id="insert" parameterType="com.example.domains.ReplyVO">
+           INSERT INTO	yjy.tbl_reply(rno,bno,reply,replyer)
+           VALUES		(seq.reply.nextval, #{bno}, #{contents},#{userName})
+       </insert>-->
+
+    <!-- <update id="update" parameterType="com.example.domains.ReplyVO">
+         UPDATE	yjy.tbl_board
+         SET		content = #{content} ,
+                 userName = #{userName}
+         where	bno = #{bno}
+     </update>
+
+     <delete id="delete" parameterType="Integer">
+         DELETE FROM	yjy.tbl_board
+         where 		bno = #{bno}
+     </delete>-->
+
+
+</mapper>

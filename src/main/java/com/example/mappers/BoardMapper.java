@@ -1,6 +1,6 @@
-package com.example.dao;
+package com.example.mappers;
 
-import com.example.domain.BoardDomain;
+import com.example.domains.BoardDomain;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

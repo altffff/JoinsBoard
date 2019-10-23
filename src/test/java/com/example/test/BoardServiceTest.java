@@ -16,10 +16,10 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.example.dao.BoardMapper;
-import com.example.domain.BoardDomain;
-import com.example.service.BoardService;
-import com.example.service.impl.BoardServiceImpl;
+import com.example.mappers.BoardMapper;
+import com.example.domains.BoardDomain;
+import com.example.services.BoardService;
+import com.example.services.impl.BoardServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class BoardServiceTest {

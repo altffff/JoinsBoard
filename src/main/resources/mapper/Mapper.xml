@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.dao.BoardMapper">
+<mapper namespace="com.example.mappers.BoardMapper">
 
-	<select id="findAll" resultType="com.example.domain.BoardDomain">
+	<select id="findAll" resultType="com.example.domains.BoardDomain">
 		SELECT	*
 		FROM	yjy.tbl_board
 	</select>
 
-	<select id="findByBno2" parameterType="Integer" resultType="com.example.domain.BoardDomain">
+	<select id="findByBno2" parameterType="Integer" resultType="com.example.domains.BoardDomain">
 
         SELECT  *
 		FROM    yjy.tbl_board
@@ -16,7 +16,7 @@
 
 	</select>
 
-	<select id="findByBno" parameterType="Integer" resultType="com.example.domain.BoardDomain">
+	<select id="findByBno" parameterType="Integer" resultType="com.example.domains.BoardDomain">
 
         SELECT  *
 		FROM    yjy.tbl_board
@@ -25,14 +25,14 @@
 	</select>
 
 
-	<select id="findByUserName" parameterType="String" resultType="com.example.domain.BoardDomain">
+	<select id="findByUserName" parameterType="String" resultType="com.example.domains.BoardDomain">
 		SELECT	*
 		FROM	yjy.tbl_board
 		WHERE	userName = #{userName}
 
 	</select>
 
-	<insert id="insert" parameterType="com.example.domain.BoardDomain">
+	<insert id="insert" parameterType="com.example.domains.BoardDomain">
 		INSERT INTO	yjy.tbl_board(userName,
 		                      content)
 		VALUES		(#{userName},
@@ -40,7 +40,7 @@
 					 )
 	</insert>
 
-	<update id="update" parameterType="com.example.domain.BoardDomain">
+	<update id="update" parameterType="com.example.domains.BoardDomain">
 		UPDATE	yjy.tbl_board
 		SET		content = #{content} ,
 				userName = #{userName}

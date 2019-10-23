@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 
 
-function renewTable(result, bno){
+function renewTable(result, bno){ //댓글 테이블 새로고침
 	var html = '';
 	length = result.length;
 

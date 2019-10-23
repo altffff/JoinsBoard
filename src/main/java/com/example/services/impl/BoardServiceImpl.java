@@ -1,8 +1,8 @@
-package com.example.service.impl;
+package com.example.services.impl;
 
-import com.example.dao.BoardMapper;
-import com.example.domain.BoardDomain;
-import com.example.service.BoardService;
+import com.example.mappers.BoardMapper;
+import com.example.domains.BoardDomain;
+import com.example.services.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
