@@ -1,4 +1,4 @@
-# Spring Boot 마스터하기 #
+# Spring Boot #
 
 ##1. MySQL with MyBatis
 ### 1-1. 단순 게시판 구현
