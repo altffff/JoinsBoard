@@ -21,7 +21,7 @@ public class BoardController {
     private BoardService boardService;
 
     // 전체 보기
-    @GetMapping("/board")
+    @GetMapping("/")
     public ModelAndView list() {
         List<BoardDomain> boardList = boardService.findAll();
         ModelAndView nextPage = new ModelAndView("board/home");
