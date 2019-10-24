@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mappers.BoardMapper">
+
+	<select id="findAll" resultType="com.example.domains.BoardVO">
+		SELECT *
+		  FROM yjy.tbl_board
+	</select>
+
+	<select id="findByBno" parameterType="Integer" resultType="com.example.domains.BoardVO">
+
+        SELECT *
+		  FROM yjy.tbl_board
+		 WHERE bno = #{bno}
+
+	</select>
+
+
+	<select id="findByWriter" parameterType="String" resultType="com.example.domains.BoardVO">
+		SELECT *
+		  FROM yjy.tbl_board
+		 WHERE userName = #{writer}
+
+	</select>
+
+	<insert id="insert" parameterType="com.example.domains.BoardVO">
+		INSERT INTO yjy.tbl_board(
+		                         title
+		        				 ,content
+		        				 ,writer
+		        				 )
+		     VALUES (
+		             #{title}
+			        ,#{content}
+			         #{writer}
+			 	    )
+	</insert>
+
+	<update id="update" parameterType="com.example.domains.BoardVO">
+		UPDATE yjy.tbl_board
+		   SET title = #{title}
+		       ,content = #{content}
+		       ,writer = #{writer}
+		 WHERE bno = #{bno} and writer=#{writer}
+
+	</update>
+
+	<delete id="delete" parameterType="Integer">
+		DELETE yjy.tbl_board
+		 WHERE bno = #{bno} and writer=#{writer}
+	</delete>
+
+
+</mapper>

@@ -1,7 +1,7 @@
 package com.example.services.impl;
 
 import com.example.mappers.BoardMapper;
-import com.example.domains.BoardDomain;
+import com.example.domains.BoardVO;
 import com.example.services.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,26 +16,22 @@ public class BoardServiceImpl implements BoardService{
     BoardMapper boardMapper;
 
     @Override
-    public List<BoardDomain> findAll() {
+    public List<BoardVO> findAll() {
         return boardMapper.findAll();
     }
 
     @Override
-    public List<BoardDomain> findByBno(int bno) {
+    public List<BoardVO> findByBno(int bno) {
         return boardMapper.findByBno(bno);
-    }
-    @Override
-    public List<BoardDomain> findByBno2(int bno) {
-        return boardMapper.findByBno2(bno);
     }
 
     @Override
-    public void insert(BoardDomain board) {
+    public void insert(BoardVO board) {
         boardMapper.insert(board);
     }
 
     @Override
-    public void update(BoardDomain board) {
+    public void update(BoardVO board) {
         boardMapper.update(board);
     }
 

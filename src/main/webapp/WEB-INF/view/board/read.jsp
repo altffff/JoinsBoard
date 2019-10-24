@@ -19,7 +19,7 @@
 <body>
 <div class="container">
 	<h3>
-		작성자 : <b>${board.userName}</b>
+		글제목 <b>${board.title}</b>
 	</h3>
 	<hr>
 	<h4>${board.content}</h4>

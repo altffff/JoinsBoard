@@ -23,13 +23,17 @@ $(document).ready(function(){
 		var row = $(this).parent().parent().parent();
 		var tr = row.children();
 
-		var userName = tr.eq(2).text();
-		var content = tr.eq(1).text();
+
+		var title = tr.eq(1).text();
+		var content = tr.eq(3).text();
+        var writer = '';
 
 		$("#modal-title").text("수정 페이지");
 
-		$("#userName").val(userName);
-		$("#content").val(content);
+        $("#title").val(title);
+        $("#content").val(content);
+		$("#writer").val(writer);
+
 
 		$("#myModal").modal();
 	});
@@ -57,7 +61,8 @@ $(document).ready(function(){
 
 		var data = {
 			"bno" : bno,
-			"userName" : $("#userName").val(),
+			"writer" : $("#writer").val(),
+			"title" : $("#title").val(),
 			"content" : $("#content").val()
 		};
 

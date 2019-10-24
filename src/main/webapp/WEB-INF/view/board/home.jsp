@@ -28,8 +28,8 @@
 		<thead>
 		<tr>
 			<th class="col-md-1">bno</th>
-			<th class="col-md-7">content</th>
-			<th class="col-md-2">userName</th>
+			<th class="col-md-7">title</th>
+			<%--<th class="col-md-2"></th>--%>
 			<th class="col-md-2">수정 / 삭제</th>
 		</tr>
 		</thead>
@@ -37,8 +37,8 @@
 		<c:forEach var="board" items="${boardList}">
 			<tr id="tr${board.bno}">
 				<td>${board.bno}</td>
-				<td><a href="/board/${board.bno}">${board.content}</a></td>
-				<td>${board.userName}</td>
+				<td><a href="/board/${board.bno}">${board.title}</a></td>
+				<%--<td>${board.userName}</td>--%>
 				<td>
 					<div class="btn-group">
 						<button name="modify" value="${board.bno}"
@@ -47,6 +47,7 @@
 								class="btn btn-xs btn-danger">삭제</button>
 					</div>
 				</td>
+				<td style="display: none">${board.content}</td>
 			</tr>
 		</c:forEach>
 		</tbody>

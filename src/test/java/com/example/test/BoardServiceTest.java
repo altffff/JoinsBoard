@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.example.mappers.BoardMapper;
-import com.example.domains.BoardDomain;
+import com.example.domains.BoardVO;
 import com.example.services.BoardService;
 import com.example.services.impl.BoardServiceImpl;
 
@@ -43,22 +43,22 @@ public class BoardServiceTest {
 	
 	@Before
 	public void setup() {
-		BoardDomain board = new BoardDomain();
+		BoardVO board = new BoardVO();
 		board.setBno(1);
-		board.setUserName("yjy");
+		board.setWriter("yjy");
 		board.setContent("Welcome!!!!");
 		
-		Mockito.when(boardService.findByBno(1)).thenReturn((List<BoardDomain>) board);
+		Mockito.when(boardService.findByBno(1)).thenReturn((List<BoardVO>) board);
 	}
 	
 	@Test
 	public void testFindByUserId() {
 		logger.info("#### testFindByUserId() ####");
-		BoardDomain board = (BoardDomain) boardService.findByBno(1);
-		logger.info("list.get(0).getUserName() : " + board.getUserName());
+		BoardVO board = (BoardVO) boardService.findByBno(1);
+		logger.info("list.get(0).getUserName() : " + board.getWriter());
 		logger.info("list.get(0).getContent() : " + board.getContent());
 
-		assertThat(board.getUserName()).isEqualTo("yjy");
+		assertThat(board.getWriter()).isEqualTo("yjy");
 	}
 
 }

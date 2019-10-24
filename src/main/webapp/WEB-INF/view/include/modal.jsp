@@ -14,12 +14,16 @@
 			<div class="modal-body">
 				<table class="table">
 					<tr>
-						<td>사용자명</td>
-						<td><input class="form-control" id="userName" type="text"></td>
+						<td>글제목</td>
+						<td><input class="form-control" id="title" type="text"></td>
 					</tr>
 					<tr>
 						<td>내용</td>
-						<td><textarea class="form-control" id="content" rows="10"></textarea></td>
+						<td><textarea class="form-control" id="content" rows="10" ></textarea></td>
+					</tr>
+					<tr>
+						<td>사용자</td>
+						<td><input class="form-control" id="writer" type="text"></td>
 					</tr>
 				</table>
 			</div>
