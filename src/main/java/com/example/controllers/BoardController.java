@@ -56,6 +56,7 @@ public class BoardController {
     public void modify(BoardVO board) {
         logger.info("PUT data : " + board.toString());
         boardService.update(board);
+
     }
 
     //글 삭제

@@ -30,7 +30,8 @@
 			<th class="col-md-1">bno</th>
 			<th class="col-md-7">title</th>
 			<%--<th class="col-md-2"></th>--%>
-			<th class="col-md-2">수정 / 삭제</th>
+			<th class="col-md-2"> 등록일시</th>
+			<th class="col-md-1">수정 / 삭제</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -38,7 +39,8 @@
 			<tr id="tr${board.bno}">
 				<td>${board.bno}</td>
 				<td><a href="/board/${board.bno}">${board.title}</a></td>
-				<%--<td>${board.userName}</td>--%>
+				<td>${board.regdate}</td>
+				<td style="display: none">${board.content}</td>
 				<td>
 					<div class="btn-group">
 						<button name="modify" value="${board.bno}"
@@ -47,7 +49,7 @@
 								class="btn btn-xs btn-danger">삭제</button>
 					</div>
 				</td>
-				<td style="display: none">${board.content}</td>
+
 			</tr>
 		</c:forEach>
 		</tbody>

@@ -23,7 +23,6 @@ $(document).ready(function(){
 		var row = $(this).parent().parent().parent();
 		var tr = row.children();
 
-
 		var title = tr.eq(1).text();
 		var content = tr.eq(3).text();
         var writer = '';
