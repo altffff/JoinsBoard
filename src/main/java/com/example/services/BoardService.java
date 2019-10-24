@@ -9,8 +9,8 @@ public interface BoardService {
 
     List<BoardVO> findAll();
     List<BoardVO> findByBno(int bno);
-    void insert(BoardVO board);
-    void update(BoardVO board);
-    void delete(int bno);
+    int insert(BoardVO board);
+    int update(BoardVO board);
+    int delete(int bno);
 
 }

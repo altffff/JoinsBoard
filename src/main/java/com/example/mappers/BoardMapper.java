@@ -19,12 +19,12 @@ public interface BoardMapper {
     List<BoardVO> findByWriter(@Param("writer") String writer);
 
     /* 글 추가 */
-    void insert(BoardVO board);
+    int insert(BoardVO board);
 
     /* 글 수정 */
-    void update(BoardVO board);
+    int update(BoardVO board);
 
     /* 글삭제 */
-    void delete(@Param("bno") int bno);
+    int delete(@Param("bno") int bno);
 
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 @Controller
@@ -63,7 +64,10 @@ public class BoardController {
     @RequestMapping("/board/{bno}")
     public String delete(@PathVariable("bno") int bno) {
         logger.info("DELETE bno : " + bno);
-        boardService.delete(bno);
+        if(boardService.delete(bno)==0){
+            
+        };
+
         return "home";
     }
 
