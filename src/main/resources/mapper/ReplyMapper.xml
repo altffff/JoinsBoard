@@ -7,7 +7,7 @@
     <select id="getList" parameterType="Integer" resultType="com.example.domains.ReplyVO">
 		SELECT *
 		FROM yjy.tbl_reply
-		where bno=9
+		where bno=#{bno}
 	</select>
 
     <!--   <insert id="insert" parameterType="com.example.domains.ReplyVO">
