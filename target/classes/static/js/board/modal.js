@@ -36,31 +36,24 @@ $(document).ready(function(){
 
 	//delModal 의 delSubmit 버튼 클릭
 	$("#delSubmit").click(function () {
-		action='delete'
-		url = '/board';
-		bno = this.value;
-		//alert( $("#writer").val());
-
-		//var writer =  $("input=writer").val();
+       // bno = this.value;
+		url = '/board'+bno;
 		var writer =  $('input#writer')[1].value;
 		var realwriter = $("#realwriter").val();
+		var delbno = $("#realbno").val();
 
-		console.log(writer);
 
 		if( writer==realwriter) {
-			$.ajax({
-				url: '/board/' + bno,
-				type: 'DELETE',
-				data: data,
-				success: function (data) {
-					$("#delModal").modal('toggle');
-				},
-				complete: function (data) {
-					location.reload();
-				}
-			});
+            $.ajax({
+                async : false,
+                url : "/board/" + delbno,
+                type : "DELETE",
+
+                success : function() { $("#myModal").modal('toggle'); },
+                complete : function () {location.reload(); }
+            });
 		}else {
-			alert("입력한비번: "+writer+"진짜비번: "+realwriter);
+			alert("패스워드가 틀렸습니다");
 		}
 
 	})
@@ -100,9 +93,11 @@ $(document).ready(function(){
 		var row = $(this).parent().parent().parent();
 		var tr = row.children();
 		var writer = tr.eq(5).text();
+		console.log(bno);
 
 		//alert(writer);
 		$("#realwriter").val(writer);
+		$("#realbno").val(bno);
 		$("#delModal").modal();
 	})
 

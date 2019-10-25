@@ -15,11 +15,12 @@
 				<table class="table">
 					<tr>
 						<td>패스워드</td>
-						<td><input class="form-control" id="writer" type="text" value="zzzz"></td>
+						<td><input class="form-control" id="writer" type="text"></td>
 					</tr>
 				</table>
 
-				<input <%--style="display: none"--%>class="form-control" id="realwriter" type="text">
+				<input style="display: none"class="form-control" id="realwriter" type="text">
+				<input style="display: none"class="form-control" id="realbno" type="text">
 			</input>
 			<div class="modal-footer">
 				<button id="delSubmit" type="button" class="btn btn-success">Submit</button>

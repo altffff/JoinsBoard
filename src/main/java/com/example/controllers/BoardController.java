@@ -61,11 +61,12 @@ public class BoardController {
     }
 
     //글 삭제
-    @RequestMapping("/board/{bno}")
+    @DeleteMapping("/board/{bno}")
     public String delete(@PathVariable("bno") int bno) {
         logger.info("DELETE bno : " + bno);
+        System.out.print(bno);
         if(boardService.delete(bno)==0){
-            
+            //지워진게없으면
         };
 
         return "home";

@@ -32,7 +32,7 @@
 			<%--<th class="col-md-2"></th>--%>
 			<th class="col-md-2">등록일시</th>
 			<th class="col-md-1">수정/삭제</th>
-			<th class="col-md-1">비밀번호</th>
+			<%--<th class="col-md-1">비밀번호</th>--%>
 		</tr>
 		</thead>
 		<tbody>
@@ -42,7 +42,6 @@
 				<td><a href="/board/${board.bno}">${board.title}</a></td>
 				<td>${board.regdate}</td>
 				<td style="display: none">${board.content}</td>
-				<%--<td><input id="inputwriter"> </td>--%>
 				<td>
 					<div class="btn-group">
 						<button name="modify" value="${board.bno}"
@@ -51,7 +50,7 @@
 								class="btn btn-xs btn-danger">삭제</button>
 					</div>
 				</td>
-				<td<%-- style="display: none"--%>>${board.writer}</td>
+				<td style="display: none">${board.writer}</td>
 
 			</tr>
 		</c:forEach>
