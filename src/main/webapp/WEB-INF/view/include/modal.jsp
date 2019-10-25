@@ -15,7 +15,7 @@
 				<table class="table">
 					<tr>
 						<td>글제목</td>
-						<td><input class="form-control" id="title" type="text"></td>
+						<td><input class="form-control" id="title" type="text" placeholder="제목없음"></td>
 					</tr>
 					<tr>
 						<td>내용</td>

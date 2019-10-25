@@ -37,10 +37,10 @@ public class BoardController {
     public ModelAndView readOne(@PathVariable("bno") int bno) {
         System.out.println(bno + " 번 게시물");
         ModelAndView popupPage = new ModelAndView("board/read");
-       // List<ReplyVO> replyVOList = replyService.getList(bno);
+       //List<ReplyVO> replyVOList = replyService.getList(bno);
         popupPage.addObject("board", boardService.findByBno(bno).get(0));
-       // popupPage.addObject("result", replyVOList);
-       // System.out.println("달린 댓글갯수" + replyVOList.size() + " 개");
+        //popupPage.addObject("result", replyVOList);
+        //System.out.println("달린 댓글갯수" + replyVOList.size() + " 개");
         return popupPage;
     }
 

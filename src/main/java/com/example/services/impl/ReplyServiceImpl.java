@@ -3,10 +3,12 @@ package com.example.services.impl;
 import com.example.domains.ReplyVO;
 import com.example.mappers.ReplyMapper;
 import com.example.services.ReplyService;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @Service
 public class ReplyServiceImpl implements ReplyService{
@@ -16,9 +18,12 @@ public class ReplyServiceImpl implements ReplyService{
     ReplyMapper replyMapper;
 
     @Override
-    public List<ReplyVO> getList(int bno) { //bno를 주면 bno에 맞는 댓글들 조인해옴
-        return replyMapper.getList(bno);
+    public List<ReplyVO> findByBno(int bno) { //bno를 주면 bno에 맞는 댓글들 조인해옴
+        return replyMapper.findByBno(bno);
     }
+
+    @Override
+    public void deletereply(int bno) { replyMapper.deletereply(bno); }
 
 /*    @Override
     public List<BoardDomain> findByBno(int bno) {
@@ -39,10 +44,7 @@ public class ReplyServiceImpl implements ReplyService{
         boardMapper.update(board);
     }
 
-    @Override
-    public void delete(int bno) {
-        boardMapper.delete(bno);
-    }*/
+   */
 
 }
 

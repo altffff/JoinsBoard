@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface ReplyService {
-    List<ReplyVO> getList(int bno);
-
+    List<ReplyVO> findByBno(int bno);
+    void deletereply(int rno);
 }

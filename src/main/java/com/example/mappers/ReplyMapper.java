@@ -2,12 +2,15 @@ package com.example.mappers;
 
 import com.example.domains.ReplyVO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 @Mapper
 public interface ReplyMapper {
 
-   // public int insert(ReplyVO vo);
-    List<ReplyVO> getList(int bno);
+    /*bno로 댓글검색*/
+    List<ReplyVO> findByBno(@Param("bno") int bno);
+
+    void deletereply(int bno);
 }

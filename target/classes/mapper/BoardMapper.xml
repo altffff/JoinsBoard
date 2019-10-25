@@ -20,7 +20,7 @@
 	<select id="findByWriter" parameterType="String" resultType="com.example.domains.BoardVO">
 		SELECT *
 		  FROM yjy.tbl_board
-		 WHERE userName = #{writer}
+		 WHERE writer = #{writer}
 
 	</select>
 

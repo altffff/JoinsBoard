@@ -2,6 +2,7 @@ $(document).ready(function(){
 	var bno = Number(window.location.pathname.split("/")[2]);
 	var resultArray = [];
 	var html = '';
+	//console.log("댓글테스트" + bno);
 
 	$.ajax({
 		async : false,
@@ -11,19 +12,8 @@ $(document).ready(function(){
 			renewTable(result, bno);
 		}	
 	});
-		
-	// 새 댓글 쓰기 버튼 클릭
-	$("#createBtn").click(function(){
-		action='create';
-		type = 'POST'
-		$("#modal-title").text("새 댓글 작성");
-		$("#myModal").modal();
-	});
 	
-
-
-	
-	// Modal의 Submit 버튼 클릭 (새로운 댓글 생성)
+/*	// Modal의 Submit 버튼 클릭 (새로운 댓글 생성)
 	$("#modalSubmit").click(function(){
 
 		var data = {
@@ -46,7 +36,7 @@ $(document).ready(function(){
 				$("#myModal").modal('hide');
 			}			
 		});
-	});
+	});*/
 });
 
 
@@ -58,13 +48,12 @@ function renewTable(result, bno){ //댓글 테이블 새로고침
 	for(var i = 0; i < length; i++){
 		html += '<tr>'
 				+ '<td><input type="hidden" id="id'+result[i].rno+'" value="'+result[i].id+'"></td>'
-				+ '<td>' + result[i].rno + '</td>' 
-				+ '<td><input class="form-control" type="text" id="'+ result[i].rno +'" value="' + result[i].content + '" rows="40" readonly></td>'
-				+ '<td align="center">' +result[i].userName + '</td>'
-				+ "<td>"
+				//+ '<td>' + result[i].rno + '</td>'
+				+ '<td><input class="form-control" type="text" id="'+ result[i].rno +'" value="' + result[i].reply + '" rows="40" readonly></td>'
+				+ '<td align="center">' +result[i].replier + '</td>'
+			    + "<td>"
 				+ "<div class='btn-group'>"
-				+ "<button value="+ result[i].rno + " class='btn btn-xs btn-warning modify'>수정</button>"
-				+ "<button value="+ result[i].rno + " class='btn btn-xs btn-danger delete'>삭제</button>" 
+				+ "<button value="+result[i].rno+ " class='btn btn-xs btn-danger delete'>삭제</button>"
 				+ "</div>"
 				+ "</td>"	
 				+ "</tr>";		
@@ -82,25 +71,36 @@ function renewTable(result, bno){ //댓글 테이블 새로고침
 	
 	// 삭제 버튼 클릭시 이벤트 처리
 	$(".delete").click(function(){
-		var rno = $(this).val();	
-		var id = $("#id"+rno).val();
-				
+		var rno = $(this).val();	//댓글고유번호
+
+		console.log(rno);
 		var data = {
-			"id" : id,
 			"bno" : bno,
-			"rno" : rno
+			"rno" : rno,
 		};
-		
+
 		$.ajax({
 			async : false,
 			url : "/delete",
 			type : "POST",
 			data : data,
 			success : function(result){
-				console.log(result);
-				renewTable(result, bno);
-			}
+				renewTable(result,bno);
+			},
+			complete : function () {location.reload(); }
+
 		})
-		
+
 	});
+
+	// 새 댓글 쓰기 버튼 클릭
+	$('#newReplyReg').click(function(){
+		action='create';
+		type = 'POST'
+
+		alert("새댓글작성합니다");
+		//정보담아서
+		//등록으로 전달
+	});
+
 }

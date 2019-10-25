@@ -75,14 +75,16 @@ $(document).ready(function(){
 			"content" : $("#content").val()
 		};
 
-		$.ajax({
-			url : url,
-			type : type,
-			data : data,
-			success : function(data) { $("#myModal").modal('toggle'); },
-			complete : function (data) {location.reload(); }
+		if($("#title").val()!='' &&  $("#writer").val()!=''){
+			$.ajax({
+				url : url,
+				type : type,
+				data : data,
+				success : function(data) { $("#myModal").modal('toggle'); },
+				complete : function (data) {location.reload(); }
 
-		})
+			})
+		}else alert("제목과 패스워드는 공백을 허용하지 않습니다")
 	});
 
 	// 삭제하기 버튼 클릭
