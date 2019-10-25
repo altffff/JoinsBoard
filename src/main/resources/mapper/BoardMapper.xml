@@ -9,11 +9,9 @@
 	</select>
 
 	<select id="findByBno" parameterType="Integer" resultType="com.example.domains.BoardVO">
-
         SELECT *
 		  FROM yjy.tbl_board
 		 WHERE bno = #{bno}
-
 	</select>
 
 
@@ -26,10 +24,10 @@
 
 	<insert id="insert" parameterType="com.example.domains.BoardVO">
 		INSERT INTO yjy.tbl_board(
-		                         title
-		        				 ,content
-		        				 ,writer
-		        				 )
+		            title            /* 글제목 */
+		        	,content         /* 글내용 */
+		        	,writer
+		            )
 		     VALUES (
 		             #{title}
 			        ,#{content}
@@ -38,11 +36,12 @@
 	</insert>
 
 	<update id="update" parameterType="com.example.domains.BoardVO">
-		UPDATE yjy.tbl_board
-		   SET title = #{title}
+		UPDATE  yjy.tbl_board
+		   SET  title   = #{title}
 		       ,content = #{content}
-		       ,writer = #{writer}
-		 WHERE bno = #{bno} and writer=#{writer}
+		       ,writer  = #{writer}
+		 WHERE  bno     = #{bno}
+		   and  writer  = #{writer}
 
 	</update>
 

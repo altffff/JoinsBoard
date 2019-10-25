@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class BoardVO {
-    /*고유 글번호 */
-    private int bno;
+
+    private int bno; /*고유 글번호 */
 
     /*글제목*/
     private String title;

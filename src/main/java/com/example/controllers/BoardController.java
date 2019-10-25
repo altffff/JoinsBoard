@@ -1,7 +1,6 @@
 package com.example.controllers;
 
 import com.example.domains.BoardVO;
-import com.example.domains.ReplyVO;
 import com.example.services.BoardService;
 import com.example.services.ReplyService;
 import org.slf4j.Logger;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.io.PrintWriter;
 import java.util.List;
 
 @Controller
@@ -37,7 +35,7 @@ public class BoardController {
     public ModelAndView readOne(@PathVariable("bno") int bno) {
         System.out.println(bno + " 번 게시물");
         ModelAndView popupPage = new ModelAndView("board/read");
-       //List<ReplyVO> replyVOList = replyService.getList(bno);
+        //List<ReplyVO> replyVOList = replyService.getList(bno);
         popupPage.addObject("board", boardService.findByBno(bno).get(0));
         //popupPage.addObject("result", replyVOList);
         //System.out.println("달린 댓글갯수" + replyVOList.size() + " 개");
@@ -65,10 +63,9 @@ public class BoardController {
     public String delete(@PathVariable("bno") int bno) {
         logger.info("DELETE bno : " + bno);
         System.out.print(bno);
-        if(boardService.delete(bno)==0){
+        if (boardService.delete(bno) == 0) {
             //지워진게없으면
-        };
-
+        }
         return "home";
     }
 
