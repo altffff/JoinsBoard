@@ -20,11 +20,11 @@ $(document).ready(function(){
 		bno = this.value;
 
 		// content 담기
-		var row = $(this).parent().parent().parent();
-		var tr = row.children();
-		var title = tr.eq(1).text();
+		var row     = $(this).parent().parent().parent();
+		var tr      = row.children();
+		var title   = tr.eq(1).text();
 		var content = tr.eq(3).text();
-        var writer = '';
+        var writer  = '';
 
 		$("#myModal").modal();
 		$("#modal-title").text("수정 페이지");
@@ -59,7 +59,7 @@ $(document).ready(function(){
 	})
 
 	// Modal의 Submit 버튼 클릭
-	$("#modalSubmit").click(function(){
+	$("#modalSubmit").click(function() {
 
 		if(action == 'create'){
 			bno = 0;
@@ -88,16 +88,14 @@ $(document).ready(function(){
 	});
 
 	// 삭제하기 버튼 클릭
-	$("button[name='delete']").click(function(){
+	$("button[name='delete']").click(function() {
 		bno = this.value;
 
 		// content 담기
 		var row = $(this).parent().parent().parent();
 		var tr = row.children();
 		var writer = tr.eq(5).text();
-		console.log(bno);
 
-		//alert(writer);
 		$("#realwriter").val(writer);
 		$("#realbno").val(bno);
 		$("#delModal").modal();

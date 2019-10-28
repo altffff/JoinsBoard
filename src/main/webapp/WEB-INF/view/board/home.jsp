@@ -23,10 +23,8 @@
 		<tr>
 			<th class="col-md-1">번호</th>
 			<th class="col-md-7">제목</th>
-			<%--<th class="col-md-2"></th>--%>
 			<th class="col-md-2">등록일시</th>
 			<th class="col-md-1">수정/삭제</th>
-			<%--<th class="col-md-1">비밀번호</th>--%>
 		</tr>
 		</thead>
 		<tbody>

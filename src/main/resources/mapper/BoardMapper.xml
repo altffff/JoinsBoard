@@ -4,8 +4,9 @@
 <mapper namespace="com.example.mappers.BoardMapper">
 
 	<select id="findAll" resultType="com.example.domains.BoardVO">
-		SELECT *
-		  FROM yjy.tbl_board
+		  SELECT *
+		    FROM yjy.tbl_board
+		ORDER BY regdate DESC;
 	</select>
 
 	<select id="findByBno" parameterType="Integer" resultType="com.example.domains.BoardVO">
@@ -13,7 +14,6 @@
 		  FROM yjy.tbl_board
 		 WHERE bno = #{bno}
 	</select>
-
 
 	<select id="findByWriter" parameterType="String" resultType="com.example.domains.BoardVO">
 		SELECT *
@@ -24,9 +24,9 @@
 
 	<insert id="insert" parameterType="com.example.domains.BoardVO">
 		INSERT INTO yjy.tbl_board(
-		            title            /* 글제목 */
-		        	,content         /* 글내용 */
-		        	,writer
+		             title           /* 글제목 */
+		            ,content         /* 글내용 */
+		        	,writer          /* 작성자 */
 		            )
 		     VALUES (
 		             #{title}
@@ -37,9 +37,9 @@
 
 	<update id="update" parameterType="com.example.domains.BoardVO">
 		UPDATE  yjy.tbl_board
-		   SET  title   = #{title}
-		       ,content = #{content}
-		       ,writer  = #{writer}
+		   SET  title   = #{title}    /* 글제목 */
+		       ,content = #{content}  /* 글내용 */
+		       ,writer  = #{writer}   /* 작성자 */
 		 WHERE  bno     = #{bno}
 		   and  writer  = #{writer}
 
@@ -49,6 +49,5 @@
 		DELETE FROM yjy.tbl_board
 		      WHERE bno = #{bno}
 	</delete>
-
 
 </mapper>

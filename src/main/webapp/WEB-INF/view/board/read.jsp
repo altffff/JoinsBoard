@@ -19,7 +19,8 @@
 <body>
 <div class="container">
 	<h3>
-		글제목 <b>${board.title}</b>
+		<h6 id="boardnum">${board.bno}</h6>제목: <b>${board.title}</b>
+
 	</h3>
 	<hr>
 	<h4>${board.content}</h4>
@@ -32,22 +33,16 @@
 		<!-- reply.js에서 -->
 	</table>
 	<jsp:include page="../include/modal.jsp" />
-
-
     <tr>
-        <td><input class="form-control" type="text" id="newreply" value="" rows="40" autofocus></td>
-        <td><input type="text" id="newreplier" placeholder="username" rows="20"></td>
-        <td><input type="text" id="newreplypass" placeholder="password" rows="20"></td>
+        <td> <input class="form-control" type="text" id="newreply" value = "" rows="40" autofocus> </td>
+    	    <td> <input type = "text" id = "newreplier"   placeholder = "username" rows="40"> </td>
+        	<td> <input type = "text" id = "newreplypass" placeholder = "password" rows="40"> </td>
         <td>
             <div class='btn-group'>
                 <button id="newReplyReg">댓글등록</button>
                 </div>
             </td>
         </tr>
-
-
-<%--	<button id="createBtn" type="button" class="btn btn-info btn-sm"
-			data-toggle="modal">새 댓글 쓰기</button>--%>
 </div>
 </body>
 </html>

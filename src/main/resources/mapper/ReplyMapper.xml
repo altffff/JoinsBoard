@@ -10,26 +10,23 @@
 	</delete>
 
     <select id="findByBno" parameterType="Integer" resultType="com.example.domains.ReplyVO">
-		SELECT *
-		FROM yjy.tbl_reply
-		where bno=#{bno}
+	    SELECT *
+	 	  FROM yjy.tbl_reply
+ 		 WHERE bno = #{bno}
 	</select>
 
-    <!--   <insert id="insert" parameterType="com.example.domains.ReplyVO">
-           INSERT INTO	yjy.tbl_reply(rno,bno,reply,replyer)
-           VALUES		(seq.reply.nextval, #{bno}, #{contents},#{userName})
-       </insert>-->
-
-    <!-- <update id="update" parameterType="com.example.domains.ReplyVO">
-         UPDATE	yjy.tbl_board
-         SET		content = #{content} ,
-                 userName = #{userName}
-         where	bno = #{bno}
-     </update>
-
-     <delete id="delete" parameterType="Integer">
-
-     </delete>-->
-
-
+	<insert id="insert" parameterType="com.example.domains.ReplyVO">
+		INSERT INTO yjy.tbl_reply(
+		            bno            /* 댓글이 달린 글번호 */
+		           ,reply          /* 댓글 내용 */
+                   ,replier        /* 댓글 작성자  */
+                   ,rPassword      /*댓글 비밀번호*/
+		            )
+		     VALUES (
+                    #{bno}
+                   ,#{reply}
+			       ,#{replier}
+			       ,#{rPassword}
+			 	   )
+	</insert>
 </mapper>

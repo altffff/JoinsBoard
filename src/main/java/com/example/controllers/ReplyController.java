@@ -20,40 +20,23 @@ public class ReplyController {
     @Autowired
     private ReplyService replyService;
 
+    //해당 게시글의 전체 댓글 리스트 가져오기
     @GetMapping("/reply/{bno}")
-    public List<ReplyVO> findByBno(@PathVariable("bno") int bno) throws Exception {
-        System.out.println("reply controller 에서 getmapping 으로 댓글긁어오기");
-
+    public List<ReplyVO> findByBno(@PathVariable("bno") int bno) {
         return replyService.findByBno(bno);
-
     }
 
+    //고유 rno 로 댓글 삭제하기
     @PostMapping("/delete")
     public void deleteReply(int rno) {
-        System.out.println(rno + " 번 댓글지우자,,컨트롤러");
         replyService.deletereply(rno);
     }
 
-    /*@PostMapping("/reply")
-    public List<ReplyVO> insertReply(ReplyVO reply) {
-        logger.info("aaa : "  + reply.toString());
-        return replyService.insert(reply);
+    //댓글등록하기
+    @PostMapping("/reply")
+    public void create(ReplyVO rep) {
+        logger.info("POST reply : " + rep);
+        replyService.insert(rep);
     }
 
-    @PutMapping("/reply")
-    public List<ReplyVO> updateReply(ReplyVO reply) {
-        return replyService.update(reply);
-    }
-
-
-
-    @GetMapping("/reply/all")
-    public List<ReplyVO> findAll(){
-        return replyService.findAll();
-    }
-
-    @GetMapping("/reply/condition")
-    public List<ReplyVO> findByCondition(){
-        return replyService.findByCondition();
-    }*/
 }

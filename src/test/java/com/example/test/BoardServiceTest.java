@@ -55,9 +55,8 @@ public class BoardServiceTest {
 	public void testFindByUserId() {
 		logger.info("#### testFindByUserId() ####");
 		BoardVO board = (BoardVO) boardService.findByBno(1);
-		logger.info("list.get(0).getUserName() : " + board.getWriter());
+		logger.info("list.get(0).getWriter() : " + board.getWriter());
 		logger.info("list.get(0).getContent() : " + board.getContent());
-
 		assertThat(board.getWriter()).isEqualTo("yjy");
 	}
 

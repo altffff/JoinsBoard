@@ -4,7 +4,6 @@
 <!-- Modal -->
 <div class="modal fade" id="delModal" role="dialog">
 	<div class="modal-dialog">
-
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-header">

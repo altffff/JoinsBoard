@@ -5,20 +5,11 @@ import lombok.Data;
 @Data
 public class BoardVO {
 
-    private int bno; /*고유 글번호 */
+    private int bno;             //글 번호
+    private String title;        //글 제목
+    private String content;      //글 본문
+    private String writer;       //글 비밀번호
+    private String regdate;      //글 작성날짜
+    private String updatedate;   //글 수정날짜
 
-    /*글제목*/
-    private String title;
-
-    /*글본문*/
-    private String content;
-
-    /*글작성자 - 패스워드로 사용*/
-    private String writer;
-
-    /*글작성날짜*/
-    private String regdate;
-
-    /*글수정날짜*/
-    private String updatedate;
 }

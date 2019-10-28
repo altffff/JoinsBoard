@@ -3,48 +3,27 @@ package com.example.services.impl;
 import com.example.domains.ReplyVO;
 import com.example.mappers.ReplyMapper;
 import com.example.services.ReplyService;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 @Service
 public class ReplyServiceImpl implements ReplyService{
 
-
     @Autowired
     ReplyMapper replyMapper;
 
+    /*글번호(bno)로 특정 글에 달린 모든 댓글 찾기*/
     @Override
-    public List<ReplyVO> findByBno(int bno) { //bno를 주면 bno에 맞는 댓글들 조인해옴
-        return replyMapper.findByBno(bno);
-    }
+    public List<ReplyVO> findByBno(int bno) { return replyMapper.findByBno(bno); }
 
+   /* 댓글 고유번호(rno) 로 댓글 삭제하기*/
     @Override
-    public void deletereply(int bno) { replyMapper.deletereply(bno); }
+    public void deletereply(int rno) { replyMapper.deletereply(rno); }
 
-/*    @Override
-    public List<BoardDomain> findByBno(int bno) {
-        return boardMapper.findByBno(bno);
-    }
+   /* 댓글 등록하기*/
     @Override
-    public List<BoardDomain> findByBno2(int bno) {
-        return boardMapper.findByBno2(bno);
-    }
-
-    @Override
-    public void insert(BoardDomain board) {
-        boardMapper.insert(board);
-    }
-
-    @Override
-    public void update(BoardDomain board) {
-        boardMapper.update(board);
-    }
-
-   */
-
+    public void insert(ReplyVO rep) { replyMapper.insert(rep);}
 }
 
