@@ -13,7 +13,7 @@
 <script type="text/javascript" src="/js/board/modal.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/modal.css">
 
-<title>게시판</title>
+<title>그냥 게시판 입니다</title>
 </head>
 <body>
 <div class="container">
