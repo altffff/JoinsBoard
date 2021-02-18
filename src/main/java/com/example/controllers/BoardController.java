@@ -54,8 +54,8 @@ public class BoardController {
     @DeleteMapping("/board/{bno}")
     public String delete(@PathVariable("bno") int bno) {
         logger.info("DELETE bno : " + bno);
-        if (boardService.delete(bno) == 0) {
             //지워진게없으면 -> 삭제못함처리
+        if (boardService.delete(bno) == 0) {
         }
         return "home";
     }
